@@ -1,9 +1,9 @@
 package com.qtbdp.config.server;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.config.server.EnableConfigServer;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -15,11 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * Created by dell on 2017/4/5.
  */
-//@EnableDiscoveryClient
-@Configuration
-@EnableAutoConfiguration
-@RestController
+@EnableDiscoveryClient
+@SpringBootApplication
 @EnableConfigServer
+@RestController
 public class ConfigServerApplication {
 
     /**
