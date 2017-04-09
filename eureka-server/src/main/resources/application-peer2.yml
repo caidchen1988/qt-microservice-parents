@@ -1,0 +1,16 @@
+#server:
+#  port: 1112
+#
+#spring:
+#  application: eureka-server
+#
+#---
+### 配置注册中心集群peer1,peer2,peer3
+#eureka:
+#  instance:
+#    hostname: peer2
+#  client:
+#    #register-with-eureka: false
+#    #fetch-registry: false
+#    serviceUrl:
+#      defaultZone: http://peer3:1113/eureka/

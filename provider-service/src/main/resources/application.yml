@@ -1,0 +1,12 @@
+server:
+  port: 2222
+
+# 服务提供方名称
+spring:
+  application:
+    name: pro-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/

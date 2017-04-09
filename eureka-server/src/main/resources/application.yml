@@ -1,0 +1,10 @@
+## 设置注册中心端口
+server:
+  port: 1111
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/

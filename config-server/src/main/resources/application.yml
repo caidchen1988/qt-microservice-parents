@@ -1,0 +1,24 @@
+# 配置服务注册中心
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:1111/eureka/
+
+# git仓库配置
+spring:
+  application:
+    name: config-server # 服务应用名称 qt-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/caidchen1988/qt-server
+          searchPaths: qt-server-config/config-repo
+          username: qt_config_server
+          password: qt_config_server@pass
+
+## 配置注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/

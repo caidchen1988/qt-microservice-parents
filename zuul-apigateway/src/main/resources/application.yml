@@ -1,0 +1,26 @@
+server:
+  port: 5555
+
+spring:
+  application:
+    name: api-gateway-zuul
+
+---
+# 到Zuul的中规则为：/api-a-url/**的访问都映射到http://localhost:2222/上，
+# 也就是说当我们访问http://localhost:5555/api-a-url/add?a=1&b=2的时候，
+# Zuul会将该请求路由到：http://localhost:2222/add?a=1&b=2上。
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: ribbon-consumer
+    api-b:
+      path: /api-b/**
+      serviceId: feign-consumer
+
+---
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
