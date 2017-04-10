@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 /**
+ * 构建RESTful API
  * Created with IntelliJ IDEA.
  * User: 浩
  * Date: 2017/4/9

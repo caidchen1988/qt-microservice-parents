@@ -2,7 +2,7 @@ package com.qtbdp.provider.domain;
 
 /**
  * Created with IntelliJ IDEA.
- * User: ºÆ
+ * User: chenhao
  * Date: 2017/4/9
  * Time: 21:37
  * To change this template use File | Settings | File Templates.
