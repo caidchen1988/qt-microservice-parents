@@ -17,14 +17,14 @@ public class SysUser implements java.io.Serializable {
     private String password;//用户密码
     private Date date;//时间
 
-    private Set<SysRole> SysRoles = new HashSet<SysRole>(0);// 所对应的角色集合
+    private Set<SysRole> sysRoles = new HashSet<SysRole>(0);// 所对应的角色集合
 
-    public SysUser(String name, String email, String password, Date date, Set<SysRole> SysRoles) {
+    public SysUser(String name, String email, String password, Date date, Set<SysRole> sysRoles) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.date = date;
-        this.SysRoles = SysRoles;
+        this.sysRoles = sysRoles;
     }
 
     public SysUser() {
@@ -71,10 +71,10 @@ public class SysUser implements java.io.Serializable {
     }
 
     public Set<SysRole> getSysRoles() {
-        return SysRoles;
+        return this.sysRoles;
     }
 
     public void setSysRoles(Set<SysRole> sysRoles) {
-        SysRoles = sysRoles;
+        this.sysRoles = sysRoles;
     }
 }
