@@ -17,4 +17,5 @@ public interface ComputeClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/add")
     Integer add(@RequestParam(value = "a") Integer a, @RequestParam(value = "b") Integer b);
+
 }

@@ -41,7 +41,7 @@ public class SwaggerConfig {
                 .title("Spring Boot中使用Swagger2构建RESTful APIs")
                 .description("基于Spring Cloud微服务架构源码查看地址：https://github.com/caidchen1988/qt-microservice-parents")
                 .termsOfServiceUrl("https://github.com/caidchen1988/qt-microservice-parents")
-                .contact("浩")
+                .contact("钱塘数据交易平台")
                 .version("v1.0")
                 .build();
     }

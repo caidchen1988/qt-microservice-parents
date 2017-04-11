@@ -34,18 +34,6 @@ public class UserController {
         return r;
     }
 
-    @ApiOperation(value="获取用户列表", notes="处理\"/users/\"的GET请求，用来获取用户列表")
-    @RequestMapping(value={""}, method= RequestMethod.GET)
-    public String getUserList(ModelMap map) {
-        // 还可以通过@RequestParam从页面中传递参数来进行查询条件或者翻页信息的传递
-
-        List<User> r = userMapper.findAll() ;
-
-        map.put("users", r) ;
-        map.put("host", "http://www.cnblogs.com/vinphy/p/4674247.html") ;
-        return "user-list";
-    }
-
     @ApiOperation(value="创建用户", notes="根据User对象创建用户")
     @RequestMapping(value="", method=RequestMethod.POST)
     public String postUser(@ModelAttribute User user) {

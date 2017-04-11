@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
  * 创建ConsumerController来消费COMPUTE-SERVICE的add服务。通过直接RestTemplate来调用服务，计算10 + 20的值。
  * Created by dell on 2017/4/7.
  */
-@RestController
-@RequestMapping(value = "/compute")
+//@RestController
+//@RequestMapping(value = "/compute")
 public class ConsumerController {
 
     /*@Autowired
