@@ -2,22 +2,18 @@ package com.qtdbp.feign.web;
 
 import com.qtdbp.feign.exception.GlobalException;
 import com.qtdbp.feign.model.User;
-import com.qtdbp.feign.service.ComputeClient;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,6 +25,7 @@ import java.util.Map;
  */
 @Api(description="首页业务数据处理")
 @Controller
+@Secured({"ADMIN"}) // 此方法只允许 ADMIN 角色访问
 @RequestMapping(value = "/hello")
 public class HelloController {
 

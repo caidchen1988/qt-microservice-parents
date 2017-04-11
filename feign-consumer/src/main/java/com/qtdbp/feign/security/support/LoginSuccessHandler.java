@@ -27,7 +27,7 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
         SysUser userDetails = (SysUser)authentication.getPrincipal();
        /* Set<SysRole> roles = userDetails.getSysRoles();*/
         //输出登录提示信息
-        logger.info("管理员 " + userDetails.getName() + " 登录");
+        logger.info("user: " + userDetails.getName() + " acess sucess!");
 
         logger.info("IP :"+ CommonUtil.getIpAddress(request));
 
