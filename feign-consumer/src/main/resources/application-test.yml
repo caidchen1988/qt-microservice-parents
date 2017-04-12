@@ -1,0 +1,49 @@
+server:
+  port: 4444
+
+spring:
+  application:
+    name: feign-consumer
+  thymeleaf:
+    cache: false  # thymeleaf模板引擎是否开启缓存，开发时关闭
+  datasource:
+    name: dataSource
+    type: com.alibaba.druid.pool.DruidDataSource
+    initial-size: 2 # 连接池初始化大小
+    min-idle: 2     # 最小连接池
+    max-active: 10  # 最大连接池
+    max-wait: 600   # 配置获取连接等待超时的时间600ms
+    time-between-eviction-runs-millis: 60000 # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    min-evictable-idle-time-millis: 300000   # 配置一个连接在池中最小生存的时间，单位是毫秒
+    validation-query: SELECT 1 FROM USER
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    url: jdbc:mysql://192.168.36.39:3306/test?useUnicode=true&characterEncoding=gbk&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: Mysql@3306
+    driver-class-name: com.mysql.jdbc.Driver
+    pool-prepared-statements: true   # 打开PSCache
+    max-open-prepared-statements: 20 # 并且指定每个连接上PSCache的大小
+    connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    filters: stat,wall,log4j         # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+
+
+---
+# Thymeleaf的默认参数配置
+#    check-template-location: true # Check that the templates location exists.
+#    content-type: text/html       # Content-Type value.
+#    enabled: true                 # Enable MVC Thymeleaf view resolution.
+#    encoding: UTF-8               # Template encoding.
+#    prefix: classpath:/templates/ # Prefix that gets prepended to view names when building a URL.
+#    suffix: .html                 # Suffix that gets appended to view names when building a URL.
+#    #template-resolver-order:     # Order of the template resolver in the chain. spring.thymeleaf.view-names= # Comma-separated list of view names that can be resolved.
+#    #excluded-view-names:         # Comma-separated list of view names that should be excluded from resolution.
+#    mode: HTML5                   # Template mode to be applied to templates. See also StandardTemplateModeHandlers.
