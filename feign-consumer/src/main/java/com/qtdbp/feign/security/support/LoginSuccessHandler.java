@@ -19,7 +19,7 @@ import java.io.IOException;
  */
 public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
 
-    private Logger logger = LoggerFactory.getLogger(LoginSuccessHandler.class) ;
+    private Logger logger = LoggerFactory.getLogger(this.getClass()) ;
 
     public void onAuthenticationSuccess(HttpServletRequest request,
                                         HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
@@ -27,9 +27,11 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
         SysUser userDetails = (SysUser)authentication.getPrincipal();
        /* Set<SysRole> roles = userDetails.getSysRoles();*/
         //输出登录提示信息
-        logger.info("user: " + userDetails.getName() + " acess sucess!");
+        logger.info("user: " + userDetails.getUser_name() + " acess sucess!");
 
         logger.info("IP :"+ CommonUtil.getIpAddress(request));
+
+        logger.error("测试日志级别ERROR");
 
         super.onAuthenticationSuccess(request, response, authentication);
     }

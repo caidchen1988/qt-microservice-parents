@@ -1,5 +1,8 @@
 package com.qtdbp.feign.model.security;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 系统角色
  *
@@ -9,7 +12,9 @@ public class SysRole {
 
     private int id;
     private String name; //角色名称
-    private SysUser SUser; //角色对应的用户实体
+    private String code; // 角色编码
+
+    private Set<SysPermission> sysPermissions = new HashSet<SysPermission>(0);// 所对应的权限集合
 
     public int getId() {
         return id;
@@ -27,11 +32,19 @@ public class SysRole {
         this.name = name;
     }
 
-    public SysUser getSUser() {
-        return SUser;
+    public String getCode() {
+        return code;
     }
 
-    public void setSUser(SysUser SUser) {
-        this.SUser = SUser;
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public Set<SysPermission> getSysPermissions() {
+        return sysPermissions;
+    }
+
+    public void setSysPermissions(Set<SysPermission> sysPermissions) {
+        this.sysPermissions = sysPermissions;
     }
 }

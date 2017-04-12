@@ -23,24 +23,24 @@ public class SecurityUser extends SysUser implements UserDetails {
         if(suser != null)
         {
             this.setId(suser.getId());
-            this.setName(suser.getName());
-            this.setEmail(suser.getEmail());
+            this.setUser_name(suser.getUser_name());
             this.setPassword(suser.getPassword());
             this.setDate(suser.getDate());
             this.setSysRoles(suser.getSysRoles());
+            this.setSysPermissions(suser.getSysPermissions());
         }
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 
-        Collection<GrantedAuthority> authorities = new ArrayList<>();
+        Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
         Set<SysRole> userRoles = this.getSysRoles();
 
         if(userRoles != null)
         {
             for (SysRole role : userRoles) {
-                SimpleGrantedAuthority authority = new SimpleGrantedAuthority(role.getName());
+                SimpleGrantedAuthority authority = new SimpleGrantedAuthority(role.getCode());
                 authorities.add(authority);
             }
         }
@@ -54,7 +54,7 @@ public class SecurityUser extends SysUser implements UserDetails {
 
     @Override
     public String getUsername() {
-        return super.getName();
+        return super.getUser_name();
     }
 
     @Override

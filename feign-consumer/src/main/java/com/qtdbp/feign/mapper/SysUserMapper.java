@@ -15,9 +15,9 @@ public interface SysUserMapper {
 
     /**
      * 查询系统用户
-     * @param name
+     * @param username
      * @return
      */
-    @Select("select * from s_user where name = #{name}")
-    SysUser findByName(@Param("name") String name) ;
+    @Select("select * from s_user where user_name = #{username}")
+    SysUser findByName(@Param("username") String username) ;
 }
