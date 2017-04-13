@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @FeignClient("pro-service")注解来绑定该接口对应pro-service服务,@FeignClient注解中的fallback属性指定回调类
  * Created by dell on 2017/4/7.
  */
-@FeignClient(value = "pro-service", fallback = ComputeClientHystrix.class)
+@FeignClient(value = "PRO-SERVICE", fallback = ComputeClientHystrix.class)
 public interface ComputeClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/add")

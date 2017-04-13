@@ -17,3 +17,25 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:1111/eureka/
+
+# ===================================================================
+# 分布式文件系统FDFS配置
+# ===================================================================
+fdfs:
+  soTimeout: 1501
+  connectTimeout: 601
+  thumbImage:             #缩略图生成参数
+    width: 150
+    height: 150
+  trackerList:            #TrackerList参数,支持多个
+    - 192.168.36.39:22122
+    #- 192.168.36.39:22123
+  pool:
+      #从池中借出的对象的最大数目
+      maxTotal: 153
+      #获取连接时的最大等待毫秒数100
+      maxWaitMillis: 102
+## 必须关闭jms，否则启动报错
+spring:
+  jmx:
+    enabled: false

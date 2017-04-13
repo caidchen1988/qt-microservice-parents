@@ -64,6 +64,13 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.21</version>
         </dependency>
+
+        <!-- 引入FastDFS客户端 -->
+        <dependency>
+            <groupId>com.github.tobato</groupId>
+            <artifactId>fastdfs-client</artifactId>
+            <version>1.25.3-RELEASE</version>
+        </dependency>
     </dependencies>
 
 </project>
